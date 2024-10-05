@@ -19,8 +19,9 @@ namespace Project.Controllers
             return View(objMoviesList);
         }
 
-        public IActionResult Create()
+        public IActionResult Add()
         {
+
             return View();
         }
     }
