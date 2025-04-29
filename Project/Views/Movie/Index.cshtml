@@ -7,9 +7,9 @@
                 List of Movies
             </h2>
         </div>
-        <div class="vol-6 text-end">
+        <div class="col-6 text-end">
             <a asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle">Add Movie</i>
+                <i class="bi bi-plus-circle"></i> Add Movie
             </a>
         </div>
     </div>
@@ -23,7 +23,10 @@
                     Description
                 </th>
                 <th>
-                     Released
+                    Released
+                </th>
+                <th>
+                    Actions
                 </th>
             </tr>
         </thead>
@@ -39,6 +42,13 @@
                     </td>
                     <td>
                         @movie.Released
+                    </td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@movie.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             }
