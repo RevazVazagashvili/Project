@@ -13,16 +13,28 @@ namespace Project.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             List<Movie> objMoviesList = _db.Movies.ToList();
             return View(objMoviesList);
         }
 
-        public IActionResult Add()
+        [HttpGet]
+        public IActionResult Create() // GET: Show the form
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Movie movie) // POST: Save form
+        {
+            _db.Movies.Add(movie);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
 
