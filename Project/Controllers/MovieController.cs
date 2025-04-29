@@ -21,7 +21,6 @@ namespace Project.Controllers
 
         public IActionResult Add()
         {
-
             return View();
         }
     }
